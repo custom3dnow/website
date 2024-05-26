@@ -173,8 +173,9 @@
                 </span>
               </span>
               <div class="home-btn-group">
-                <button class="buttonFilled">Contact</button>
-                <button class="buttonFlat">Bekijk ons portfolio →</button>
+                <button class="buttonFilled" onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">Contact</button>
+                <button class="buttonFilled" onclick="document.getElementById('portfolio-section').scrollIntoView({ behavior: 'smooth' });" >Bekijk ons portfolio</button>
+                <button class="buttonFilled" onclick="document.getElementById('faq-section').scrollIntoView({ behavior: 'smooth' });">De Veelgestelde vragen vind je hier</button>
               </div>
             </div>
           </div>
@@ -187,8 +188,8 @@
                 <span class="home-features-sub-heading bodyLarge">
                   <span>
                     <span>
-                      <span>
-                        Welkom bij ons professionele 3D-printbedrijf waar we gespecialiseerd zijn in 3D-printen, ontwerpen, engineering, prototyping en massaproductie van custom onderdelen. Met de modernste technologie en een team van experts brengen wij uw concepten met precisie en efficiëntie tot werkelijkheid. Of u nu een uniek prototype of een grote partij aangepaste onderdelen nodig heeft, wij hebben de mogelijkheden om aan uw behoeften te voldoen.
+                      <span class="feature-card-text heading3">
+                        Welkom bij ons professionele 3D-printbedrijf waar we gespecialiseerd zijn in 3D-printen, ontwerpen, engineering, prototyping en massaproductie van custom onderdelen. Met de modernste technologie en een team van experts brengen wij uw concepten met precisie en efficiëntie tot werkelijkheid. Of u nu een uniek prototype of een grote partij op maat gemaakte onderdelen nodig heeft, wij hebben de mogelijkheden om aan uw behoeften te voldoen.
                       </span>
                       <span></span>
                     </span>
@@ -287,7 +288,7 @@
             </div>
           </div>
         </div>
-        <div class="home-portofolio">
+        <div id="portfolio-section" class="home-portofolio">
           <div class="home-banner bannerContainer">
             <div class="home-container04">
               <h1 class="home-banner-heading heading2">Portfolio</h1>
@@ -418,8 +419,8 @@
             </div>
           </div>
         </div>
-        <div class="home-pricing"></div>
-        <div class="home-faq">
+ 
+        <div id="faq-section" class="home-faq">
           <div class="faqContainer">
             <div class="home-faq1">
               <div class="home-container13">
@@ -530,6 +531,33 @@
             </div>
           </div>
         </div>
+        <!-- Contact Section -->
+        <div id="contact-section" class="home-faq">
+          <div class="faqContainer">
+            <div class="home-faq1">
+              <div class="home-container13">
+                <h2 class="home-text098 heading2">Contact</h2>
+              </div>
+              <form action="/submit_contact_form" method="post">
+                <label for="name">Naam:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="name">Bedrijfsnaam:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="phone">Telefoonnummer:</label><br>
+                <input type="tel" id="phone" name="phone"><br>
+                <label for="message">Bericht:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+                <label for="picture">Bijlagen:</label><br>
+                <input type="file" id="picture" name="picture" accept="image/*" multiple><br><br>
+                <input type="submit" value="Submit">
+              </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>                
         <div class="home-footer">
           <footer class="home-footer1 footerContainer">
             <div class="home-container15">
