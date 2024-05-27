@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email headers
     $headers = "From: $email";
-    
+
     // Handle attachments
     $file_paths = [];
     foreach ($attachments['tmp_name'] as $index => $tmp_name) {
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $file_tmp = $attachments['tmp_name'][$index];
         $file_error = $attachments['error'][$index];
         $file_size = $attachments['size'][$index];
-        
+
         if ($file_error == UPLOAD_ERR_OK && $file_size > 0) {
             $file_path = "uploads/" . basename($file_name);
             if (move_uploaded_file($file_tmp, $file_path)) {
@@ -39,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($file_paths)) {
         $boundary = md5("sanwebe");
         $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary = $boundary\r\n\r\n";
-        
+
         $body = "--$boundary\r\n";
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
         $body .= chunk_split(base64_encode($message_body));
-        
+
         foreach ($file_paths as $file_path) {
             if (file_exists($file_path)) {
                 $body .= "--$boundary\r\n";
@@ -54,14 +54,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $body .= chunk_split(base64_encode(file_get_contents($file_path)));
             }
         }
-        
+
         $body .= "--$boundary--";
         mail($to, $subject, $body, $headers);
     } else {
         mail($to, $subject, $message_body, $headers);
     }
-    
+
     // Redirect to a thank you page or display a success message
     echo "Thank you for contacting us. We will get back to you shortly.";
+} else {
+    // Handle GET requests or other methods if necessary
+    header('HTTP/1.1 405 Method Not Allowed');
+    echo "Method Not Allowed";
 }
 ?>
