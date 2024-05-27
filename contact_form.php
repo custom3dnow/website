@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $attachments = $_FILES['picture'];
 
     // Prepare email message
-    $to = 'sztspot@gmail.com';
+    $to = 'szrspot@gmail.com';
     $subject = 'Contact Form Submission';
     $message_body = "Name: $name\n";
     $message_body .= "Company: $company\n";
