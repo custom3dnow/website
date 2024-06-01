@@ -554,58 +554,17 @@
                 <input type="file" name="entry.748446800" id="entry.748446800"><br>
                 <button type="submit">Verstuur</button>
               </form>
+
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
               <script src="assets/js/jquery.min.js"></script>
               <script type="text/javascript">var submitted=false;</script>
               <script type="text/javascript">
               $('#gform').on('submit', function(e) {
-              $('#gform *').fadeOut(2000);
-              $('#gform').prepend('Your submission has been processed...');
-              });
+                $('#gform *').fadeOut(2000);
+                $('#gform').prepend('Your submission has been processed...');
+                });
               </script>             
-              <!-- <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?embedded=true" target="hidden_iframe" onsubmit="submitted=true;">
-              -->
-              <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/formResponse"></form>
-                Naam*:<br>
-                <input type="text" name="entry.2005620554" id="entry.2005620554"><br>
-                Bedrijfsnaam:<br>
-                <input type="text" name="entry.1454415952" id="entry.1454415952"><br>
-                Email*:<br>
-                <input type="email" name="entry.1045781291" id="entry.1045781291"><br>
-                Telefoonnummer:<br>
-                <input type="text" name="entry.1166974658" id="entry.1166974658"><br>
-                Bericht*:<br>
-                <input type="tel" name="entry.839337160" id="entry.839337160"><br>
-                Bijlage:<br>
-                <input type="file" name="entry.748446800" id="entry.748446800"><br>
-                <button type="submit">Submit form</button>
-              </form>
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?embedded=true" name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe> -->
-                            <!-- <form
-                action="https://formspree.io/f/xgegbdbe"
-                method="POST"
-                enctype="multipart/form-data"
-              >
-                <label for="name">Naam*:</label><br>
-                  <input type="text" id="name" name="name"><br>
-                <label for="company">Bedrijfsnaam:</label><br>
-                  <input type="text" id="company" name="company"><br>
-                <label for="email">Email*:</label><br>
-                  <input type="email" id="email" name="email"><br>
-                <label for="phone">Telefoonnummer:</label><br>
-                  <input type="tel" id="phone" name="phone"><br>
-                <label for="message">Bericht*:</label><br>
-                  <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
-                <label for="picture">Bijlagen:</label><br>
-                  <input type="file" id="picture" name="picture[]" accept="image/*" multiple><br><br>
-                <label>
-                <input type="submit" value="Verstuur">
-              </form> -->
-              <!-- https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?usp=pp_url&entry.2005620554=a&entry.1454415952=b&entry.1045781291=c@gmail.com&entry.839337160=a
-              https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?usp=pp_url&entry.2005620554=a&entry.1454415952=b&entry.1045781291=c@gmail.com&entry.1166974658=0&entry.839337160=a
-              https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?usp=pp_url&entry.2005620554=gsfadS&entry.1454415952=gew&entry.1045781291=HJGHFGDFD@GMAIL.Com&entry.1166974658=42024&entry.839337160=mbnvb&entry.748446800=jhgfdsas
-              https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?usp=pp_url&entry.2005620554=dfsda&entry.1454415952=DFSDA&entry.1045781291=DFSAD@gmail.com&entry.1166974658=456&entry.839337160=sfaedw
-              https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?usp=pp_url&entry.2005620554=GDRSFEAW&entry.1454415952=HJGHFDTRSEA&entry.1045781291=fhdgsa@gmail.com&entry.1166974658=5555&entry.748446800=dsagdsg&entry.839337160=dgsfad
-              https://docs.google.com/forms/d/e/1FAIpQLScHFlXPwpkKMydJ2VUJVvIdN2xpUuRvzZWllI5A0bJfoFgmDg/viewform?usp=pp_url&entry.2005620554=HJGHFGDFZD&entry.1454415952=JGHFNGDBF&entry.1045781291=hfgdfsdsa@gmail.com&entry.1166974658=5515&entry.748446800=gdsfa&entry.839337160=dgsfa -->
             </div>
           </div>
         </div> 
