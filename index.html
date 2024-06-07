@@ -72,7 +72,13 @@
             class="home-navbar-interactive navbarContainer"
           >
             <span class="home-logo">
-              <span class="home-text">3DvoorMKB.nl</span>
+              <span class="home-text">
+                <img
+                  alt="image"
+                  src="public/external/logo3dvmkb.png" 
+                  width="78" height="auto"
+                />
+              </span>
               <br />
             </span>
             <div data-thq="thq-navbar-nav" class="home-desktop-menu">
@@ -142,7 +148,7 @@
             </div>
           </header>
         </div>
-        <div class="home-hero">
+        <div id="home" class="home-hero">
           <div class="home-hero1 heroContainer">
             <div class="home-container01">
               <h1 class="home-hero-heading">Breng uw ideeën tot leven</h1>
@@ -171,7 +177,7 @@
             </div>
           </div>
         </div>
-        <div class="home-features">
+        <div id="diensten" class="home-features">
           <div class="featuresContainer">
             <div class="home-features1">
               <div class="home-container02">
@@ -586,11 +592,11 @@
             <div class="home-container15">
               <span class="logo">3DvoorMKB</span>
               <nav class="home-nav1">
-                <span class="bodySmall">Home</span>
-                <span class="home-nav221 bodySmall">Diensten</span>
-                <span class="home-nav321 bodySmall">Portfolio</span>
-                <span class="home-nav421 bodySmall">Veelgestelde vragen</span>
-                <span class="home-nav521 bodySmall">Contact</span>
+                <button class="bodySmall" onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' });" >Home</button>
+                <button class="bodySmall" onclick="document.getElementById('diensten').scrollIntoView({ behavior: 'smooth' });" >Diensten</button>
+                <button class="bodySmall" onclick="document.getElementById('portfolio-section').scrollIntoView({ behavior: 'smooth' });" >Portfolio</button>
+                <button class="bodySmall" onclick="document.getElementById('faq-section').scrollIntoView({ behavior: 'smooth' });">Veelgestelde vragen</button>
+                <button class="bodySmall" onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">Contact</button>
               </nav>
             </div>
             <div class="home-separator"></div>
