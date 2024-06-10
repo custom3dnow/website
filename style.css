@@ -1,335 +1,167 @@
-:root {
-  --dl-color-gray-500: #595959;
-  --dl-color-gray-700: #999999;
-  --dl-color-gray-900: #D9D9D9;
-  --dl-color-custom-bg: #254d9dff;
-  --dl-size-size-large: 144px;
-  --dl-size-size-small: 48px;
-  --dl-color-danger-300: #A22020;
-  --dl-color-danger-500: #BF2626;
-  --dl-color-danger-700: #E14747;
-  --dl-color-gray-black: #000000;
-  --dl-color-gray-white: #FFFFFF;
-  --dl-size-size-medium: 96px;
-  --dl-size-size-xlarge: 192px;
-  --dl-size-size-xsmall: 16px;
-  --dl-space-space-unit: 16px;
-  --dl-color-primary-100: #003EB3;
-  --dl-color-primary-300: #0074F0;
-  --dl-color-primary-500: #14A9FF;
-  --dl-color-primary-700: #85DCFF;
-  --dl-color-success-300: #199033;
-  --dl-color-success-500: #32A94C;
-  --dl-color-success-700: #4CC366;
-  --dl-size-size-xxlarge: 288px;
-  --dl-color-custom-blauw: #0a37a3ff;
-  --dl-size-size-maxwidth: 1400px;
-  --dl-radius-radius-round: 50%;
-  --dl-space-space-halfunit: 8px;
-  --dl-space-space-sixunits: 96px;
-  --dl-space-space-twounits: 32px;
-  --dl-color-custom-primary1: rgba(255,255,255,0.5);
-  --dl-color-custom-primary2: #d4dadf;
-  --dl-radius-radius-radius2: 2px;
-  --dl-radius-radius-radius4: 4px;
-  --dl-radius-radius-radius8: 8px;
-  --dl-space-space-fiveunits: 80px;
-  --dl-space-space-fourunits: 64px;
-  --dl-space-space-threeunits: 48px;
-  --dl-color-custom-secondary1: #222222;
-  --dl-color-custom-neutral-dark: #161616;
-  --dl-color-custom-neutral-light: #FFFFFF;
-  --dl-space-space-oneandhalfunits: 24px;
+/*
+Theme Name: Assembler
+Theme URI: https://wordpress.com/theme/assembler
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Assemble something beautiful.
+Requires at least: 6.4
+Tested up to: 6.4
+Requires PHP: 7.0
+Version: 0.0.15
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: assembler
+Tags: blog, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready
+*/
+
+/* Progresive enhancement to reduce widows and orphans. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+	text-wrap: balance;
 }
-.button {
-  color: var(--dl-color-gray-black);
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
+
+p {
+	text-wrap: pretty;
 }
-.input {
-  color: var(--dl-color-gray-black);
-  cursor: auto;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
+
+/* Tiny tweak to make sure footers are properly spaced. */
+footer {
+	margin-top: 0 !important;
 }
-.textarea {
-  color: var(--dl-color-gray-black);
-  cursor: auto;
-  padding: 0.5rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
+
+/* Provide better default color for social links */
+.wp-block-social-links.is-style-logos-only li.wp-social-link {
+	color: currentcolor;
 }
-.list {
-  width: 100%;
-  margin: 1em 0px 1em 0px;
-  display: block;
-  padding: 0px 0px 0px 1.5rem;
-  list-style-type: none;
-  list-style-position: outside;
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+	height: 1em;
+	width: 1em;
 }
-.list-item {
-  display: list-item;
+
+.wp-block-social-links.has-small-icon-size {
+	font-size: 20px;
 }
-.teleport-show {
-  display: flex !important;
-  transform: none !important;
+
+/* Set default line height for font size presets. */
+.has-xx-large-font-size {
+	line-height: 1;
 }
-.buttonFilled {
-  color: var(--dl-color-custom-neutral-dark);
-  transition: 0.3s;
-  font-family: Hind;
-  font-weight: bold;
-  padding-top: var(--dl-space-space-halfunit);
-  padding-left: var(--dl-space-space-oneandhalfunits);
-  padding-right: var(--dl-space-space-oneandhalfunits);
-  padding-bottom: var(--dl-space-space-halfunit);
-  background-color: var(--dl-color-custom-primary1);
+
+/* Add space between the header and first element, if its a paragraph. */
+.entry-content > p:first-child {
+	margin-top: var(--wp--style--root--padding-left);
 }
-.buttonFilled:hover {
-  background-color: var(--dl-color-custom-primary2);
+
+/* Move header core/navigation to the right on mobile. */
+.order-0 {
+	order: 0;
 }
-.buttonFilledSecondary {
-  color: var(--dl-color-custom-neutral-light);
-  transition: 0.3s;
-  font-family: Hind;
-  font-weight: bold;
-  padding-top: var(--dl-space-space-halfunit);
-  padding-left: var(--dl-space-space-oneandhalfunits);
-  padding-right: var(--dl-space-space-oneandhalfunits);
-  padding-bottom: var(--dl-space-space-halfunit);
-  background-color: var(--dl-color-custom-primary1);
+
+.order-1 {
+	order: 1;
 }
-.buttonFilledSecondary:hover {
-  background-color: var(--dl-color-custom-primary2);
+
+.grow-0 {
+	flex-grow: 0;
 }
-.buttonOutline {
-  color: var(--dl-color-custom-neutral-light);
-  border: 1px solid;
-  font-family: Hind;
-  font-weight: bold;
-  padding-top: var(--dl-space-space-halfunit);
-  border-color: var(--dl-color-custom-neutral-light);
-  padding-left: var(--dl-space-space-oneandhalfunits);
-  padding-right: var(--dl-space-space-oneandhalfunits);
-  padding-bottom: var(--dl-space-space-halfunit);
+
+.grow {
+	flex-grow: 1;
 }
-.buttonFlat {
-  color: var(--dl-color-custom-neutral-light);
-  font-family: Hind;
-  font-weight: bold;
-  padding-top: var(--dl-space-space-halfunit);
-  padding-left: var(--dl-space-space-oneandhalfunits);
-  padding-right: var(--dl-space-space-oneandhalfunits);
-  padding-bottom: var(--dl-space-space-halfunit);
+
+@media (min-width: 600px) {
+
+	.md\:order-0 {
+		order: 0;
+	}
+
+	.md\:order-1 {
+		order: 1;
+	}
+
+	.md\:grow-0 {
+		flex-grow: 0;
+	}
+
+	.md\:grow {
+		flex-grow: 1;
+	}
+
 }
-.featuresContainer {
-  flex: 0 0 auto;
-  color: var(--dl-color-custom-neutral-light);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--dl-color-custom-neutral-dark);
+
+.overflow-hidden {
+	overflow: hidden;
 }
-.featuresCard {
-  width: 100%;
-  display: flex;
-  padding: var(--dl-space-space-oneandhalfunits);
-  align-items: flex-start;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: var(--dl-color-custom-secondary1);
+
+/* Style Jetpack forms */
+.wp-block-jetpack-contact-form-container {
+	--jetpack--contact-form--input-padding-left: 16px !important;
 }
-.featuresIcon {
-  fill: var(--dl-color-custom-neutral-light);
-  width: 2rem;
-  height: 2rem;
-  flex-shrink: 0;
-  margin-right: var(--dl-space-space-oneandhalfunits);
+
+.wp-block-jetpack-contact-form input,
+.wp-block-jetpack-contact-form textarea {
+	backdrop-filter: saturate(1.1);
+	background-color: transparent;
+	border-color: var(--wp--custom--input--border--color);
+	border-radius: var(--wp--custom--input--border--radius) !important; /* Requires !important to override local variables with theme variables. */
+	border-width: var(--wp--custom--input--border--width) !important;  /* Requires !important to override local variables with theme variables. */
+	filter: brightness(0.975);
+	font-size: inherit;
+	color: inherit;
+	transition: border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.freePricingCard {
-  gap: var(--dl-space-space-twounits);
-  color: var(--dl-color-custom-neutral-light);
-  width: 100%;
-  display: flex;
-  padding: var(--dl-space-space-twounits);
-  max-width: 450px;
-  min-height: 450px;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: var(--dl-color-custom-secondary1);
+
+.jetpack-contact-form .jetpack-field .jetpack-field__input,
+.jetpack-contact-form .jetpack-field .jetpack-field__textarea {
+	border-color: var(--wp--custom--input--border--color);
 }
-.basicPricingCard {
-  gap: var(--dl-space-space-twounits);
-  color: var(--dl-color-custom-neutral-light);
-  width: 100%;
-  display: flex;
-  padding: var(--dl-space-space-twounits);
-  max-width: 450px;
-  min-height: 450px;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: var(--dl-color-custom-secondary1);
+
+.wp-block-jetpack-contact-form input:not(:placeholder-shown),
+.wp-block-jetpack-contact-form textarea:not(:placeholder-shown),
+.wp-block-jetpack-contact-form input:focus,
+.wp-block-jetpack-contact-form textarea:focus {
+	filter: brightness(1);
+	backdrop-filter: saturate(1);
 }
-.proPricingCard {
-  gap: var(--dl-space-space-twounits);
-  color: var(--dl-color-custom-neutral-light);
-  width: 100%;
-  display: flex;
-  padding: var(--dl-space-space-twounits);
-  max-width: 450px;
-  min-height: 450px;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: var(--dl-color-custom-secondary1);
+
+.wp-block-jetpack-contact-form input:focus,
+.wp-block-jetpack-contact-form textarea:focus {
+	border-color: var(--wp--custom--input--focus--border--color);
 }
-.faqContainer {
-  flex: 0 0 auto;
-  color: var(--dl-color-custom-neutral-light);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-  background-color: var(--dl-color-custom-secondary1);
+
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label) select,
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label) > input,
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label) > textarea {
+	padding-top: var(--field-padding); /* Remove unnecessary padding adjustment from Jetpack. */
 }
-.navbarContainer {
-  width: 100%;
-  display: flex;
-  position: sticky;
-  align-items: center;
-  padding-top: var(--dl-space-space-oneandhalfunits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  padding-bottom: var(--dl-space-space-oneandhalfunits);
-  justify-content: space-between;
-  background-color: var(--dl-color-custom-neutral-dark);
+
+.contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
+	font-size: inherit;
+	width: auto;
+	padding: 0 4px;
+	transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), top 0.15s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobileMenu {
-  background-color: var(--dl-color-custom-neutral-dark);
+
+.contact-form .is-style-animated .grunion-field-wrap.grunion-field-select-wrap .animated-label__label,
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field.has-placeholder ~ .animated-label__label,
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:focus ~ .animated-label__label,
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:not(:placeholder-shown) ~ .animated-label__label {
+	background-color: var(--wp--custom--input--color--background) !important;
+	transform: translateY(-11px) translateX(-4px); /* Moves the label out of the field. */
 }
-.heroContainer {
-  width: 100%;
-  display: flex;
-  min-height: auto;
-  align-items: center;
-  padding-top: var(--dl-space-space-sixunits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  flex-direction: column;
-  padding-bottom: var(--dl-space-space-sixunits);
-  justify-content: center;
-  background-color: var(--dl-color-custom-neutral-dark);
+
+.contact-form label,
+.wp-block-jetpack-contact-form label,
+.jetpack-field-label .rich-text.jetpack-field-label__input {
+	font-weight: 500;
 }
-.pricingContainer {
-  gap: var(--dl-space-space-twounits);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: var(--dl-space-space-fourunits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  flex-direction: column;
-  padding-bottom: var(--dl-space-space-fourunits);
-  justify-content: center;
-  background-color: var(--dl-color-custom-neutral-dark);
-}
-.bannerContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: var(--dl-space-space-sixunits);
-  padding-left: var(--dl-space-space-fiveunits);
-  padding-right: var(--dl-space-space-fiveunits);
-  flex-direction: column;
-  padding-bottom: var(--dl-space-space-sixunits);
-  justify-content: space-between;
-  background-color: var(--dl-color-custom-neutral-dark);
-}
-.footerContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: var(--dl-space-space-twounits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  flex-direction: column;
-  padding-bottom: var(--dl-space-space-twounits);
-  justify-content: space-between;
-  background-color: var(--dl-color-custom-neutral-dark);
-}
-.socialIcons {
-  fill: var(--dl-color-custom-neutral-light);
-}
-.Heading {
-  font-size: 32px;
-  font-family: Inter;
-  font-weight: 700;
-  line-height: 1.15;
-  text-transform: none;
-  text-decoration: none;
-}
-.Content {
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 1.15;
-  text-transform: none;
-  text-decoration: none;
-}
-.bodyLarge {
-  font-size: 18px;
-  font-family: Hind;
-  font-weight: 400;
-  line-height: 150%;
-}
-.heading1 {
-  font-size: 48px;
-  font-family: "Arial";
-  font-weight: 700;
-  line-height: 150%;
-}
-.heading3 {
-  font-size: 20px;
-  text-align: center;
-  font-family: Hind;
-  font-weight: 600;
-  line-height: 150%;
-}
-.heading2 {
-  font-size: 35px;
-  font-family: "Arial";
-  font-weight: 600;
-  line-height: 150%;
-}
-.logo {
-  font-size: 2em;
-  font-family: Hind;
-  font-weight: 700;
-  line-height: 150%;
-  color: #FFFFFF;
-}
-.overline {
-  font-size: 12px;
-  font-family: Hind;
-  font-weight: 700;
-  line-height: 150%;
-  text-transform: uppercase;
-}
-.bodySmall {
-  font-size: 16px;
-  font-family: Hind;
-  font-weight: 400;
-  line-height: 150%;
-  color: #FFFFFF;
+
+.contact-form__input-error {
+	font-size: var(--wp--preset--font-size--small);
 }
